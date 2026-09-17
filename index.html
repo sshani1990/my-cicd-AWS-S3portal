@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Thinking</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary: #2b2d42;
+            --secondary: #8d99ae;
+            --accent: #ef233c;
+            --bg: #edf2f4;
+            --text: #2b2d42;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 5% 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        #home {
+            text-align: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 35, 60, 0.2);
+        }
+
+        /* Features Section */
+        #philosophy {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            padding: 3rem 2rem;
+            background: var(--bg);
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .contact-box p {
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            .contact-box {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo">Simple Thinking.</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Clarity over<br>clutter.</h1>
+        <p class="subtitle">Embracing minimalism in thought and design to create space for what truly matters.</p>
+        <a href="#philosophy" class="btn">Explore Ideas</a>
+    </section>
+
+    <section id="philosophy">
+        <h2 class="section-title">Our Philosophy</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Focus</h3>
+                <p>Stripping away the non-essential noise so your core message and purpose can shine through effortlessly.</p>
+            </div>
+            <div class="card">
+                <h3>Balance</h3>
+                <p>Finding the perfect equilibrium between form and function, ensuring both beauty and utility co-exist.</p>
+            </div>
+            <div class="card">
+                <h3>Breathe</h3>
+                <p>Utilizing white space not as emptiness, but as the oxygen that allows your best ideas to breathe and live.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h2>Keep it simple.</h2>
+            <p>Ready to start a conversation free of complications? Reach out and let's build something minimal together.</p>
+            <button class="btn" onclick="alert('Contact form coming soon!')">Say Hello</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Simple Thinking. Designed with less.</p>
+    </footer>
+
+</body>
+</html>
